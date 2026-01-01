@@ -19,11 +19,14 @@ rotation = -0.71000475
 scale = Vector2(1.0638889, 1.0804878)
 texture = ExtResource("3_2ucyk")
 
+[node name="Helicopter" type="Sprite2D" parent="Carrier"]
+unique_name_in_owner = true
+position = Vector2(412.02496, 264.19672)
+rotation = -2.4299352
+scale = Vector2(0.46685332, 0.465902)
+skew = 0.015345812
+texture = ExtResource("2_i4j2t")
+
 [node name="Plane" type="Sprite2D" parent="."]
 position = Vector2(170, 145.00002)
 texture = ExtResource("1_npita")
-
-[node name="Helicopter" type="Sprite2D" parent="."]
-position = Vector2(864, 284)
-rotation = 3.1509106
-texture = ExtResource("2_i4j2t")
