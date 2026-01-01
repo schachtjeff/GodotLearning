@@ -36,7 +36,11 @@ func _process(delta: float) -> void:
 	#helicopter.global_translate(Vector2(30.0, 50.0) * delta)
 	
 	# The actual movement of the plane to the mouse selection.
-	plane.position = plane.position.move_toward(_target, 50.0 * delta)
+	#plane.position = plane.position.move_toward(_target, 50.0 * delta)
+	
+	# Move local topic.  Does the length of the movement to new position with normalize.
+	#plane.position += plane.transform.x.normalized() * 50.0 * delta
+	plane.move_local_x(50.0 * delta)
 	
 	#print("helicopter.scale: ", helicopter.scale)
 	# Actual visual position on screen is global_position.
