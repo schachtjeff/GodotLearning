@@ -6,6 +6,9 @@ extends Node2D
 
 var _target: Vector2 = Vector2.ZERO
 
+# rotation speed constant with pi / 2 for circle.
+const ROT_SPEED: float = PI / 2
+
 func _unhandled_input(event: InputEvent) -> void:
 	# Set Target of object example when left click (already assigned) is pressed.
 	if event.is_action_pressed("SetTarget"):
@@ -40,7 +43,13 @@ func _process(delta: float) -> void:
 	
 	# Move local topic.  Does the length of the movement to new position with normalize.
 	#plane.position += plane.transform.x.normalized() * 50.0 * delta
-	plane.move_local_x(50.0 * delta)
+	# Using key press to move the plane object
+	if Input.is_action_pressed("ui_up"):
+		plane.move_local_x(50.0 * delta)
+	if Input.is_action_pressed("ui_right"):
+		plane.rotate(ROT_SPEED * delta)
+	if Input.is_action_pressed("ui_left"):
+		plane.rotate(-ROT_SPEED * delta)
 	
 	#print("helicopter.scale: ", helicopter.scale)
 	# Actual visual position on screen is global_position.
