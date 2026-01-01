@@ -4,10 +4,14 @@ extends Node2D
 @onready var plane: Sprite2D = $Plane
 @onready var helicopter: Sprite2D = %Helicopter
 
+var _target: Vector2 = Vector2.ZERO
+
 func _unhandled_input(event: InputEvent) -> void:
 	# Set Target of object example when left click (already assigned) is pressed.
 	if event.is_action_pressed("SetTarget"):
-		plane.look_at(get_global_mouse_position())
+		_target = get_global_mouse_position()
+		#plane.look_at(get_global_mouse_position())
+		plane.look_at(_target)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,10 +30,13 @@ func _process(delta: float) -> void:
 	#helicopter.position.x -= helicopter.global_position.x * delta
 	#helicopter.position.x -= 50.0 / helicopter.global_scale.x * delta
 	#helicopter.position.y -= 50.0 * delta
-	helicopter.position.y -= 30.0 * delta
+	#helicopter.position.y -= 30.0 * delta
 	# Same as above, just more concise.
 	#helicopter.translate(Vector2(30.0, 50.0) * delta)
 	#helicopter.global_translate(Vector2(30.0, 50.0) * delta)
+	
+	# The actual movement of the plane to the mouse selection.
+	plane.position = plane.position.move_toward(_target, 50.0 * delta)
 	
 	#print("helicopter.scale: ", helicopter.scale)
 	# Actual visual position on screen is global_position.
