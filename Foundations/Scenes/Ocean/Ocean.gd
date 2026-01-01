@@ -18,7 +18,12 @@ func _process(delta: float) -> void:
 	#plane.position.x = plane.position.x + 50.0 * delta
 	# This is moving slower than plane because scale may be lower than plane.
 	#helicopter.position.x -= helicopter.global_position.x * delta
-	helicopter.position.x -= 50.0 / helicopter.global_scale.x * delta
+	#helicopter.position.x -= 50.0 / helicopter.global_scale.x * delta
+	#helicopter.position.y -= 50.0 * delta
+	#helicopter.position.y -= 30.0 * delta
+	# Same as above, just more concise.
+	helicopter.translate(Vector2(30.0, 50.0) * delta)
+	helicopter.global_translate(Vector2(30.0, 50.0) * delta)
 	
 	#print("helicopter.scale: ", helicopter.scale)
 	# Actual visual position on screen is global_position.
