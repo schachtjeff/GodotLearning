@@ -12,8 +12,14 @@ config_version=5
 
 config/name="Foundations"
 config/tags=PackedStringArray("2d", "learning")
+run/main_scene="uid://bmbg0atsbf8oq"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[editor]
+
+naming/scene_name_casing=1
+naming/script_name_casing=1
 
 [rendering]
 
