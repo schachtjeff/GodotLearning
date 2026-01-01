@@ -1,0 +1,7 @@
+ Godot 4+ specific ignores
+.godot/
+/android/
+
+# Resource from Udemy course
+05_SCENES/
+Assets/

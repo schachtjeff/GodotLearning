@@ -1,9 +1,10 @@
 # GodotLearning
-Current place for my learnings on Godot
+Current place for my learnings on Godot<br>
 
-**Below are projects done on Godot 4.5**
-2d_Projects
-   - Dodge the Creeps Game, Source [Your first 2D game](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)
+**Below are projects done on Godot 4.5**<br>
+2d_Projects<br>
+   - Dodge the Creeps Game, Source [Your first 2D game](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)<br>
+   - Foundations, is a lesson on Godot learning from Richard Allbert.  [Site](https://www.udemy.com/course/jumpstart-to-2d-game-development-godot-4-for-beginners)<br>
 
-3D_Projects
-   - Squash the Creeps, Source [Your first 3D game](https://docs.godotengine.org/en/stable/getting_started/first_3d_game/index.html)
+3D_Projects<br>
+   - Squash the Creeps, Source [Your first 3D game](https://docs.godotengine.org/en/stable/getting_started/first_3d_game/index.html)<br>
