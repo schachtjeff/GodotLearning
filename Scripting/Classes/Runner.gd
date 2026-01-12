@@ -21,11 +21,12 @@ func _run() -> void:
 	bart.print_info()
 	
 	# Changing properties
-	aragorn.set_health(30)
-	bart._weapon = "skateboard"
+	aragorn.health = 150
+	#bart._weapon = "skateboard"
+	aragorn.health = 1000000
 	
 	aragorn.print_info()
 	bart.print_info()
 	
-	print(aragorn.get_health())
+	print(aragorn.health)
 	
