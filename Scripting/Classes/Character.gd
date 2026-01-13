@@ -3,8 +3,8 @@ extends Object
 #Blueprint object of character
 class_name Character
 
-
-static var character_count: int = 0
+# Static lesson
+#static var character_count: int = 0
 
 
 #var health: int
@@ -28,15 +28,16 @@ var health: int:
 
 
 func _init(p_health: int, p_name: String, p_weapon: String) -> void:
-	character_count += 1
+	#character_count += 1
 	health = p_health
 	_name = p_name
 	_weapon = p_weapon
 	
+func attack() -> void:
+	print("%s attacks with %s" % [
+		_name, _weapon
+	])
 	
-	
-
-
 func print_info() -> void:
 	print("%s health:%d wields:%s" % [
 		_name, health, _weapon

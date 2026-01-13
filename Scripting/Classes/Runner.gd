@@ -11,22 +11,27 @@ func _run() -> void:
 	#aragorn.weapon = "Bow"
 	
 	
-	var bart: Character = Character.new(50, "Bart", "Sling Shot")
+	@warning_ignore("unused_variable")
+	var bart: Hero = Hero.new("Skateboard", 50, "Bart", "Sling Shot")
+	aragorn.attack()
+	bart.attack()
+	bart.use_ability()
+	
 	# Commenting out or could be deleted after the initialization
 	#bart.health = 50
 	#bart.name = "Bart"
 	#bart.weapon = "Sling Shot"
-	print(Character.character_count)
-	aragorn.print_info()
-	bart.print_info()
+	#print(Character.character_count)
+	#aragorn.print_info()
+	#bart.print_info()
 	
 	# Changing properties
-	aragorn.health = 150
+	#aragorn.health = 150
 	#bart._weapon = "skateboard"
-	aragorn.health = 1000000
+	#aragorn.health = 1000000
 	
-	aragorn.print_info()
-	bart.print_info()
-	print(Character.character_count)
-	print(aragorn.health)
+	#aragorn.print_info()
+	#bart.print_info()
+	#print(Character.character_count)
+	#print(aragorn.health)
 	
