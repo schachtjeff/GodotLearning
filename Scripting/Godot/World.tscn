@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqt0gdyg8s71c"]
+[gd_scene load_steps=5 format=3 uid="uid://cqt0gdyg8s71c"]
 
 [ext_resource type="Script" uid="uid://syn1ki1ydpx3" path="res://Godot/World.gd" id="1_s1gw2"]
+[ext_resource type="Texture2D" uid="uid://cdsqtdpvpqise" path="res://Godot/Bg.png" id="2_320c0"]
+[ext_resource type="PackedScene" uid="uid://dslb8iwirj615" path="res://Godot/Hobbit.tscn" id="3_xmh3e"]
+[ext_resource type="PackedScene" uid="uid://bi4wo61kfv7dj" path="res://Wizard.tscn" id="4_pu12x"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_s1gw2")
+
+[node name="Bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_320c0")
+
+[node name="Hobbit" parent="." instance=ExtResource("3_xmh3e")]
+
+[node name="Hobbit2" parent="." instance=ExtResource("3_xmh3e")]
+position = Vector2(133, -58)
+
+[node name="Hobbit3" parent="." instance=ExtResource("3_xmh3e")]
+position = Vector2(282, 11)
+
+[node name="Hobbit4" parent="." instance=ExtResource("3_xmh3e")]
+position = Vector2(363, -70)
+
+[node name="Wizard" parent="." instance=ExtResource("4_pu12x")]
+position = Vector2(37, 84)

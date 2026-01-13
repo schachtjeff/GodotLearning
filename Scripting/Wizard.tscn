@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi4wo61kfv7dj"]
+
+[ext_resource type="Script" uid="uid://bumbvu4o4vcpq" path="res://Wizard.gd" id="1_65sly"]
+[ext_resource type="Texture2D" uid="uid://b75644u0m2fxa" path="res://Godot/Wizard.png" id="1_t5sql"]
+
+[node name="Wizard" type="Node2D"]
+script = ExtResource("1_65sly")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t5sql")
