@@ -4,6 +4,9 @@ extends Object
 class_name Character
 
 
+static var character_count: int = 0
+
+
 #var health: int
 var _name: String
 var _weapon: String
@@ -25,6 +28,7 @@ var health: int:
 
 
 func _init(p_health: int, p_name: String, p_weapon: String) -> void:
+	character_count += 1
 	health = p_health
 	_name = p_name
 	_weapon = p_weapon

@@ -16,7 +16,7 @@ func _run() -> void:
 	#bart.health = 50
 	#bart.name = "Bart"
 	#bart.weapon = "Sling Shot"
-	
+	print(Character.character_count)
 	aragorn.print_info()
 	bart.print_info()
 	
@@ -27,6 +27,6 @@ func _run() -> void:
 	
 	aragorn.print_info()
 	bart.print_info()
-	
+	print(Character.character_count)
 	print(aragorn.health)
 	
