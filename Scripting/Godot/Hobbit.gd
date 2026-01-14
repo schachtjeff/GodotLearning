@@ -4,6 +4,8 @@ class_name Hobbit
 
 signal kill_wizard
 
+@export var rotation_speed: float = PI
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotate(PI * delta)
+	rotate(rotation_speed * delta)
 	
 func hit_by_spell() -> void:
 	scale = Vector2(0.3, 0.3)

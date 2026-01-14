@@ -14,6 +14,7 @@ texture = ExtResource("2_320c0")
 
 [node name="Hobbit" parent="." instance=ExtResource("3_xmh3e")]
 position = Vector2(319, 331)
+rotation_speed = 1.0
 
 [node name="Wizard" parent="." instance=ExtResource("4_pu12x")]
 position = Vector2(786, 414)
