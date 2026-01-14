@@ -30,3 +30,14 @@ extends Node2D
 #func _physics_process(delta: float) -> void:
 	#print("_physics_Process", delta)
 #	pass
+
+
+func _on_wizard_cast_spell() -> void:
+	#hobbit.scale = Vector2(0.5, 0.5)
+	#hobbit.set_process(false)
+	hobbit.hit_by_spell()
+
+@onready var wizard: Wizard = $Wizard
+
+func _on_hobbit_kill_wizard() -> void:
+	wizard.hit_by_hobbit()

@@ -10,8 +10,13 @@ script = ExtResource("1_65sly")
 texture = ExtResource("1_t5sql")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SpellTimer" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpellTimer" to="." method="_on_spell_timer_timeout"]
