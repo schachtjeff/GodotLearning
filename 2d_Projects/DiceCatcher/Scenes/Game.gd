@@ -4,8 +4,14 @@ extends Node2D
 const DICE = preload("res://Scenes/Dice/Dice.tscn")
 const MARGIN: float = 80.0
 const STOPPABLE_GROUP: String = "stoppable"
+const GAME_OVER = preload("uid://svpflsu5jowm")
 
-@onready var spawn_timer: Timer = $SpawnTimer
+@onready var spawn_timer: Timer = $Pausable/SpawnTimer
+@onready var score_label: Label = $ScoreLabel
+@onready var music: AudioStreamPlayer = $Music
+@onready var pausable: Node = $Pausable
+
+var _points: int = 0
 
 func _unhandled_input(event: InputEvent) -> void:
 	#If you type the 'restart' key, reloads the game.
@@ -15,6 +21,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = false
+	update_score_label()
 	spawn_dice()
 	
 	
@@ -30,7 +38,7 @@ func spawn_dice() -> void:
 	new_dice.position = Vector2(new_x, -MARGIN)
 	# Dice to check for game over.
 	new_dice.game_over.connect(_on_dice_game_over)
-	add_child(new_dice)
+	pausable.add_child(new_dice)
 	
 	
 func pause_all() -> void:
@@ -43,8 +51,15 @@ func pause_all() -> void:
 #func _process(delta: float) -> void:
 #	pass
 
+func update_score_label() -> void:
+	score_label.text = "%04d" % _points
+
 func _on_dice_game_over() -> void:
-	pause_all()
+	#pause_all()
+	music.stop()
+	music.stream = GAME_OVER
+	music.play()
+	get_tree().paused = true
 	
 
 func _on_spawn_timer_timeout() -> void:
@@ -53,3 +68,5 @@ func _on_spawn_timer_timeout() -> void:
 
 func _on_fox_point_scored() -> void:
 	print("You scored a point!")
+	_points += 1
+	update_score_label()
