@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Dice
 
+signal game_over
+
 const SPEED: float = 80.0
 const ROTATION_SPEED: float = 5.0
 
@@ -37,5 +39,6 @@ func check_game_over() -> void:
 		#set_physics_process(false)
 		# Remove the node when it's no longer needed, or off screen.
 		# Commenting alot of above only for this game as below is only needed.
+		game_over.emit()
 		queue_free()
 	
