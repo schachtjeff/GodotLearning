@@ -12,3 +12,9 @@ texture = ExtResource("1_iukft")
 
 [node name="Dice" parent="." instance=ExtResource("2_gl6un")]
 position = Vector2(585, 144)
+
+[node name="Dice2" parent="." instance=ExtResource("2_gl6un")]
+position = Vector2(975, 98)
+
+[node name="Dice3" parent="." instance=ExtResource("2_gl6un")]
+position = Vector2(115, 89)

@@ -1,0 +1,28 @@
+extends Area2D
+
+class_name Dice
+
+const SPEED: float = 80.0
+const ROTATION_SPEED: float = 5.0
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+
+var rotation_direction: float = 1.0
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	# Random inclusive between 0 and 1
+	#    will flip direction rotation if less than 0.5
+	if randf() < 0.5: rotation_direction *= -1
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+#	pass
+	
+	
+func _physics_process(delta: float) -> void:
+	position.y += delta * SPEED
+	sprite_2d.rotate(delta * ROTATION_SPEED * rotation_direction)
