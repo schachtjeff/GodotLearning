@@ -3,11 +3,15 @@ extends Area2D
 # Fox is set Globally Group as 'stoppable' when Game is paused.
 class_name Fox
 
+signal point_scored
+
 # Speed for which Fox can move left or right
 @export var speed: float = 200.0
 
 #To be able to flip the fox horizontally when moving left or right.
 @onready var sprite_2d: Sprite2D = $Sprite2D
+# When dice enters area we should hear eating sounds.
+@onready var sounds: AudioStreamPlayer2D = $Sounds
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
@@ -40,3 +44,10 @@ func _physics_process(delta: float) -> void:
 	#position.x += move * delta
 	position.x += move * delta * speed
 	
+
+func _on_area_entered(area: Area2D) -> void:
+	# This replaces the code from the Dice, where we can handle here in Fox.
+	if area is Dice:
+		sounds.play()
+		area.queue_free()
+		point_scored.emit()

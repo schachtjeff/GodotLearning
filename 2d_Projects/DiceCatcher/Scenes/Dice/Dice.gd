@@ -42,3 +42,6 @@ func check_game_over() -> void:
 		game_over.emit()
 		queue_free()
 	
+#func _on_area_entered(area: Area2D) -> void:
+	# When detecting another Area 2D, we will queue_free to release the dice.
+#	queue_free()
