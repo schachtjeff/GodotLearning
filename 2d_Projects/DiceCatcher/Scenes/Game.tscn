@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://o8n36j8cisnt"]
+
+[ext_resource type="Texture2D" uid="uid://bp54f41nexc" path="res://Assets/GemBg.png" id="1_iukft"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GemBg" type="Sprite2D" parent="."]
+position = Vector2(630, 352)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_iukft")
