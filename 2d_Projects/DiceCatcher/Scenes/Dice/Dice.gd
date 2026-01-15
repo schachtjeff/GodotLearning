@@ -26,3 +26,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position.y += delta * SPEED
 	sprite_2d.rotate(delta * ROTATION_SPEED * rotation_direction)
+	check_game_over()
+	
+	
+func check_game_over() -> void:
+	# Want to check the CanvasItem hits the bottom
+	if get_viewport_rect().end.y < position.y:
+		#print("Off screen")
+		# Stops the physics process at game over of rotation with the dice.
+		#set_physics_process(false)
+		# Remove the node when it's no longer needed, or off screen.
+		# Commenting alot of above only for this game as below is only needed.
+		queue_free()
+	
