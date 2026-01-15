@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://belgi06683j5v"]
+
+[ext_resource type="Texture2D" uid="uid://huuvkqf5ww8g" path="res://Assets/Dice.png" id="1_dauee"]
+[ext_resource type="Shape2D" uid="uid://b2evhcqqbsleg" path="res://Resources/DiceCollisionShape.tres" id="2_p3fax"]
+
+[node name="Dice" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dauee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = ExtResource("2_p3fax")
