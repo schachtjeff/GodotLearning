@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Tappy
+
 #var _gravity: float = 200.0
 # Source the project settings
 var _gravity: float = ProjectSettings.get("physics/2d/default_gravity")
@@ -44,5 +46,6 @@ func _physics_process(delta: float) -> void:
 		print("is_on_ceiling")
 	
 func die() -> void:
-	set_physics_process(false)
-	animated_sprite_2d.stop()
+	#set_physics_process(false)
+	#animated_sprite_2d.stop()
+	get_tree().paused = true
