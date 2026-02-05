@@ -9,6 +9,8 @@ const MAIN = preload("res://Scenes/Main/Main.tscn")
 @onready var pipes_holder: Node = $PipesHolder
 @onready var upper_spawn: Marker2D = $UpperSpawn
 @onready var lower_spawn: Marker2D = $LowerSpawn
+#decouple to the SignalHub
+#@onready var game_ui: GameUi = $CanvasLayer/GameUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,3 +37,7 @@ func spawn_pipes() -> void:
 		upper_spawn.position.x, y_posision
 	)
 	pipes_holder.add_child(new_pipes)
+
+# decouple for the SignalHub
+#func _on_tappy_on_plane_died() -> void:
+#	game_ui.on_plane_died()

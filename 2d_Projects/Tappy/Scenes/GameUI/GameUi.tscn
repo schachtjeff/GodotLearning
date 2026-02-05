@@ -53,6 +53,7 @@ text = "000"
 label_settings = SubResource("LabelSettings_81r78")
 
 [node name="GameOverLabel" type="Label" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Game Over"
@@ -61,6 +62,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PressSpaceLabel" type="Label" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Press Space"
