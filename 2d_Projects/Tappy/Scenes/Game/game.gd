@@ -21,9 +21,9 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 #	pass
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		GameManager.load_main_scene()
+#func _unhandled_input(event: InputEvent) -> void:
+#	if event.is_action_pressed("ui_cancel"):
+#		GameManager.load_main_scene()
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_pipes()
