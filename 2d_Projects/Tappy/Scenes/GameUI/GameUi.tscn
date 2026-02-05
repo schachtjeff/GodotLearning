@@ -67,7 +67,10 @@ vertical_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Press Space"
+text = "Press Space
+To Go Again!
+
+esc to leave."
 label_settings = SubResource("LabelSettings_iq8cv")
 horizontal_alignment = 1
 vertical_alignment = 1
